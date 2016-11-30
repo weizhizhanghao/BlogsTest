@@ -5,6 +5,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+
+import java.util.logging.Logger;
+
 /*
 *处理需要预先加载某些数据但是不在加载时显示黑屏的情况
 */
@@ -13,6 +16,8 @@ public class SplashActivity extends Activity {
     private static final int SHOW_MIN_TIME = 3000;
     private long mStartTime;
     Context context;
+
+    //为啥我在GitHub 上的仓库看不到
 
     private Handler mHanlder = new Handler(){
         @Override
@@ -52,5 +57,6 @@ public class SplashActivity extends Activity {
         // Application.getInstance().initData(mHandler);
         // 由于这是个测试，所以随便写写加载
         mHanlder.sendEmptyMessage(1);
+
     }
 }
