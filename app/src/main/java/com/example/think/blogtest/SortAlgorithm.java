@@ -56,4 +56,64 @@ public class SortAlgorithm {
         }
     }
 
+    //chose sort part
+    public static void choseSort(int[] numbers){
+        int len = numbers.length;
+        int k;
+        int  tmp;
+        for (int i = 0; i < len; i ++){
+            k = i;
+            for (int j = i + 1; j < len; j ++){
+                if (numbers[j] < numbers[k]){
+                    k = j;
+                }
+            }
+
+            tmp = numbers[k];
+            numbers[k] = numbers[i];
+            numbers[i] = tmp;
+        }
+    }
+
+
+    // insert sort part
+    public static void insertSort(int[] numbers){
+        int len = numbers.length;
+        int tmp;
+        for (int i = 1; i < len; i ++){
+            tmp = numbers[i];
+            int j = i - 1;
+            while (j >= 0 && numbers[j] > tmp){
+                numbers[j + 1] = numbers[j];
+                j --;
+            }
+          numbers[j + 1] = tmp;
+        }
+
+        //或者 循环算法改成如下样式
+        int j = 0;
+        for (int i = 0; i < len; i ++){
+            tmp = numbers[i];
+            for (j = i; j > 0 && numbers[j - 1] < tmp; j --){
+                numbers[j] = numbers[j - 1];
+            }
+            numbers[j] = tmp;
+        }
+
+        //或者，按照自己的思路
+        for (int i = 1; i < len; i ++){
+            tmp = numbers[i];
+            for (j = i - 1; j >= 0; j --){
+                if (tmp < numbers[j]){
+                    numbers[j + 1] = numbers[j];
+                }
+            }
+
+            numbers[j] = tmp;
+        }
+    }
+
+
+
+
 }
