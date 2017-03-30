@@ -16,5 +16,7 @@ public class TargetActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_target);
+        int[] a = {1,3,6,2,7,5,0,4};
+        SortAlgorithm.insertSort(a);
     }
 }
